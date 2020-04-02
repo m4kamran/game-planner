@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { format } from 'date-fns';
+import { EventsService } from 'src/app/core/services/events.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-generated-plan',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneratedPlanComponent implements OnInit {
 
-  constructor() { }
+  events: any;
+
+  constructor(private eventService: EventsService) { }
 
   ngOnInit(): void {
+    this.eventService.events$.subscribe((events: any) => {
+      this.events = events;
+    });
   }
 
+  getFormattedDate(date: Date) {
+    const f = format(date, 'dd/MM/yyyy');
+    return f;
+  }
 }

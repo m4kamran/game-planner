@@ -7,8 +7,17 @@
     </ul>
   </nz-header>
   <nz-content>
-    <nz-breadcrumb [nzAutoGenerate]="true" [nzRouteLabel]="'breadcrumb'"></nz-breadcrumb>
-    <div class="inner-content" nz-row nzType="flex" nzAlign="middle">
+    <nz-breadcrumb
+      [nzAutoGenerate]="true"
+      [nzRouteLabel]="'breadcrumb'"
+    ></nz-breadcrumb>
+    <div
+      class="inner-content"
+      nz-row
+      nzType="flex"
+      nzJustify="center"
+      nzAlign="middle"
+    >
       <router-outlet></router-outlet>
     </div>
   </nz-content>

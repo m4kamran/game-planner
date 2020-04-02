@@ -1,1 +1,21 @@
-<p>generated-plan works!</p>
+<nz-calendar *ngIf="events">
+  <ul *nzDateCell="let date" class="events">
+    <ng-container *ngIf="events[getFormattedDate(date)]; let event">
+      <p *ngFor="let match of event">
+        <span *ngFor="let player of match.team1">
+          {{ player }}
+        </span>
+        <span> / </span>
+        <span *ngFor="let player of match.team2">
+          {{ player }}
+        </span>
+      </p>
+    </ng-container>
+  </ul>
+  <ng-container *nzMonthCell="let month">
+    <div *ngIf="getMonthData(month) as monthData" class="notes-month">
+      <section>{{ monthData }}</section>
+      <span>Backlog number</span>
+    </div>
+  </ng-container>
+</nz-calendar>
