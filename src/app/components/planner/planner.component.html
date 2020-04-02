@@ -1,1 +1,109 @@
-<p>planner works!</p>
+<div nz-col nzSpan="24">
+  <form
+    nz-form
+    [formGroup]="plannerForm"
+    class="planner-form"
+    (ngSubmit)="submitForm()"
+  >
+    <div nz-row nzGutter="16" nzType="flex" nzJustify="center">
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired
+            >RangePicker</nz-form-label
+          >
+          <nz-form-control [nzSm]="16" [nzXs]="24">
+            <nz-range-picker formControlName="range"></nz-range-picker>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="12">
+        <nz-form-item>
+          <nz-form-label [nzSpan]="5" nzFor="weekDays" nzRequired
+            >Week Day</nz-form-label
+          >
+          <nz-form-control [nzSpan]="12" nzErrorTip="Please select week day!">
+            <nz-select
+              id="weekDays"
+              formControlName="weekDay"
+              nzPlaceHolder="Select a option"
+            >
+              <nz-option nzValue="1" nzLabel="Monday"></nz-option>
+              <nz-option nzValue="2" nzLabel="Tuesday"></nz-option>
+              <nz-option nzValue="3" nzLabel="Wednesday"></nz-option>
+              <nz-option nzValue="4" nzLabel="Thursday"></nz-option>
+              <nz-option nzValue="5" nzLabel="Friday"></nz-option>
+              <nz-option nzValue="6" nzLabel="Saturday"></nz-option>
+              <nz-option nzValue="7" nzLabel="Sunday"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+
+    <div nz-row nzGutter="16" nzType="flex" nzJustify="center">
+      <div nz-col nzSpan="6">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input player 1!">
+            <nz-input-group nzPrefixIcon="user">
+              <input
+                type="text"
+                nz-input
+                formControlName="player1"
+                placeholder="Player 1"
+              />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="6">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input player 2!">
+            <nz-input-group nzPrefixIcon="user">
+              <input
+                type="text"
+                nz-input
+                formControlName="player2"
+                placeholder="Player 2"
+              />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="6">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input player 3!">
+            <nz-input-group nzPrefixIcon="user">
+              <input
+                type="text"
+                nz-input
+                formControlName="player3"
+                placeholder="Player 3"
+              />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+      <div nz-col nzSpan="6">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input player 4!">
+            <nz-input-group nzPrefixIcon="user">
+              <input
+                type="text"
+                nz-input
+                formControlName="player4"
+                placeholder="Player 4"
+              />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </div>
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button class="planner-form-button" [nzType]="'primary'">
+          Generate Plan
+        </button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>
