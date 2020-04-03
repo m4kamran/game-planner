@@ -3,7 +3,6 @@ import { BehaviorSubject } from 'rxjs';
 import { eachDayOfInterval, format } from 'date-fns';
 import { Router } from '@angular/router';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -36,6 +35,7 @@ export class EventsService {
     });
 
     this.setEvents(events);
+    localStorage.setItem('events', JSON.stringify(events));
     this.router.navigate(['generated-plan']);
   }
 
