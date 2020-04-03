@@ -2,12 +2,12 @@
   <ul *nzDateCell="let date" class="events">
     <ng-container *ngIf="events[getFormattedDate(date)]; let event">
       <p *ngFor="let match of event">
-        <span *ngFor="let player of match.team1">
-          {{ player }}
+        <span>
+          {{ match.team1.join(", ") }}
         </span>
         <span> / </span>
-        <span *ngFor="let player of match.team2">
-          {{ player }}
+        <span>
+          {{ match.team2.join(", ") }}
         </span>
       </p>
     </ng-container>
